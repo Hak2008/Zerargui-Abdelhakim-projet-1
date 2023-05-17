@@ -5,4 +5,18 @@ import java.io.IOException;
 import java.util.Iterator;
 import java.util.Map;
 
-// WRITE YOUR CODE HERE
+public class WriteSymptomDataToFile implements ISymptomWriter{
+
+@Override
+public void writeSymptoms(Map<String, Integer> symptoms){
+
+    try{ 
+        FileWriter writer = new FileWriter ("result.out");
+        writer.close();
+    }   catch (IOException e) {
+				e.printStackTrace();
+			}
+}
+
+
+}
