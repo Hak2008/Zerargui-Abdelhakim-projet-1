@@ -9,16 +9,12 @@ public class Main {
         ISymptomWriter writer = new WriteSymptomDataToFile();
         AnalyticsCounter counter = new AnalyticsCounter(reader, writer);
 
-        // Récupère la liste des symptômes à partir du fichier
         List<String> symptoms = counter.getSymptoms();
 
-        // Compte les occurrences de chaque symptôme
         Map<String, Integer> symptomCountMap = counter.countSymptoms(symptoms);
 
-        // Trie les symptômes par ordre alphabétique
         Map<String, Integer> sortedSymptoms = counter.sortSymptoms(symptomCountMap);
 
-        // Écrit les symptômes et leurs quantités dans le fichier "result.out"
         counter.writeSymptoms(sortedSymptoms);
     }
 }
